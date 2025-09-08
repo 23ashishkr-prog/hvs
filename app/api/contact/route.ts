@@ -28,11 +28,29 @@ This email was sent from the Orrmira website contact form.
 
     // For now, we'll log the email content
     // In production, you would integrate with an email service like Resend, SendGrid, or Nodemailer
-    console.log("[v0] Email would be sent to info@harguons.com:")
-    console.log(emailContent)
+    //console.log("[v0] Email would be sent to info@harguons.com:")
+   // console.log(emailContent)
 
     // Simulate email sending delay
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    //await new Promise((resolve) => setTimeout(resolve, 1000))
+        // Setup Nodemailer with GoDaddy SMTP
+    const transporter = nodemailer.createTransport({
+      host: "smtpout.secureserver.net",
+      port: 465,
+      secure: true, // SSL
+      auth: {
+        user: process.env.SMTP_USER, // full email (e.g., info@harguons.com)
+        pass: process.env.SMTP_PASS, // your email password
+      },
+    })
+
+    // Send email
+    await transporter.sendMail({
+      from: `"Orrmira Website" <${process.env.SMTP_USER}>`,
+      to: "info@harguons.com", // receiver email
+      subject: "New Contact Form Submission",
+      text: emailContent,
+    })
 
     return NextResponse.json({
       success: true,
