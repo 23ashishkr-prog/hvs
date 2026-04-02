@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { Menu, X, Mail, MapPin } from "lucide-react"
+import { Menu, X, Mail, MapPin, Phone, Linkedin, MessageSquare } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 interface LayoutProps {
@@ -126,11 +126,19 @@ export default function Layout({ children, currentPageName, onNavigate }: Layout
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-emerald-300" />
-                  <span className="text-sm text-stone-300">Kolkata, India</span>
+                  <span className="text-sm text-stone-300">2b, Sankar Ghosh Lane, Kolkata-700006</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-emerald-300" />
                   <span className="text-sm text-stone-300">info@harguons.com</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-emerald-300" />
+                  <span className="text-sm text-stone-300">+91 8585892733, 97480 29199, 9007157674</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MessageSquare className="w-4 h-4 text-emerald-300" />
+                  <span className="text-sm text-stone-300">WhatsApp: +91 8585892733</span>
                 </div>
               </div>
             </div>
@@ -161,6 +169,39 @@ export default function Layout({ children, currentPageName, onNavigate }: Layout
                 <li>Corporate Uniforms</li>
                 <li>Designer Collections</li>
               </ul>
+            </div>
+          </div>
+
+          {/* Social Media Links */}
+          <div className="border-t border-emerald-800 mt-8 pt-8">
+            <h3 className="font-semibold mb-4 text-center">Connect With Us</h3>
+            <div className="flex justify-center items-center gap-6 flex-wrap">
+              <a
+                href="https://www.linkedin.com/company/orrmira/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-stone-300 hover:text-emerald-300 transition-colors"
+              >
+                <Linkedin className="w-5 h-5" />
+                <span className="text-sm">LinkedIn</span>
+              </a>
+              <a
+                href="https://whatsapp.com/channel/0029Va6hPBeDp2QBNYw7Yq2Z"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-stone-300 hover:text-emerald-300 transition-colors"
+              >
+                <MessageSquare className="w-5 h-5" />
+                <span className="text-sm">WhatsApp Channel</span>
+              </a>
+              <a
+                href="https://g.page/r/CQzTBeEvY-ldEBM/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-stone-300 hover:text-emerald-300 transition-colors"
+              >
+                <span className="text-sm">Google Review</span>
+              </a>
             </div>
           </div>
 

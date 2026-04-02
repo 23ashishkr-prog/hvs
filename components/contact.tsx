@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { Send, Check, Loader2 } from "lucide-react"
+import { Send, Check, Loader2, Phone, MapPin, MessageSquare } from "lucide-react"
 
 export default function Contact() {
   const contactRef = useRef<HTMLDivElement>(null)
@@ -105,12 +105,37 @@ export default function Contact() {
                 corporate uniforms.
               </p>
               <div className="space-y-4 text-lg">
-                <p className="transform transition-all duration-300 hover:translate-x-2 hover:text-emerald-800">
-                  <strong>Email:</strong> info@harguons.com
-                </p>
-                <p className="transform transition-all duration-300 hover:translate-x-2 hover:text-emerald-800">
-                  <strong>Location:</strong> Kolkata, India (serving clients worldwide)
-                </p>
+                <div className="flex items-start gap-3 transform transition-all duration-300 hover:translate-x-2">
+                  <MapPin className="w-6 h-6 text-emerald-800 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-emerald-800">Corporate Address</p>
+                    <p className="text-gray-700">2b, Sankar Ghosh Lane, Kolkata-700006</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 transform transition-all duration-300 hover:translate-x-2">
+                  <Phone className="w-6 h-6 text-emerald-800 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-emerald-800">Phone</p>
+                    <p className="text-gray-700">+91 8585892733</p>
+                    <p className="text-gray-700">+91 97480 29199</p>
+                    <p className="text-gray-700">+91 9007157674</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 transform transition-all duration-300 hover:translate-x-2">
+                  <MessageSquare className="w-6 h-6 text-emerald-800 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-emerald-800">WhatsApp</p>
+                    <p className="text-gray-700">+91 8585892733</p>
+                    <a
+                      href="https://whatsapp.com/channel/0029Va6hPBeDp2QBNYw7Yq2Z"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-emerald-600 hover:text-emerald-800 underline"
+                    >
+                      Join WhatsApp Channel
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 
